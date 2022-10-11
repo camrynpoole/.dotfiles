@@ -1,0 +1,28 @@
+[user]
+  name = Camryn Poole
+	email = camrynannpoole@gmail.com
+[pull]
+	ff = only
+[color]
+	ui = auto
+[init]
+	defaultBranch = master
+[core]
+	excludesfile = /Users/camrynpoole/.gitignore
+	editor = nvim
+[alias]
+	co = checkout
+  ci = commit
+  br = branch
+  st = status
+	log = log --graph --decorate --pretty=oneline --abbrev-commits
+	bra = branch -a  --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)(%(committerdate:short)) [%(authorname)]' --sort=-committerdate
+	fuck = !git reset --hard && git clean -fdx
+	uncommit = reset --soft HEAD^
+  ac = !git add -A && git commit
+  last = log -1 HEAD
+	alias = config --get-regexp ^alias\\.
+[commit]
+	template = /Users/camrynpoole/.gitmessage
+[credential]
+	helper = osxkeychain
