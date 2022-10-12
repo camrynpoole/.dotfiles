@@ -58,6 +58,8 @@ then in .zshrc put `source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 `ln -s ~/.dotfiles/.vimrc ~/.vimrc`
 
+`ln -s ~/.dotfiles/.vim ~/.vim`
+
 - zsh
 
 `ln -s ~/.dotfiles/.zprofile ~/.zprofile`
@@ -86,4 +88,4 @@ then in .zshrc put `source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 - hammerspoon
 
-ln -s ~/.dotfiles/.hammerspoon ~/.hammerspoon
+`ln -s ~/.dotfiles/.hammerspoon ~/.hammerspoon`
