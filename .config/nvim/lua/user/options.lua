@@ -8,6 +8,7 @@ vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
+vim.opt.guicursor = "" -- stop cursor from changing shapes
 
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.pumheight = 10 -- pop up menu height
@@ -42,4 +43,4 @@ vim.opt.showcmd = false
 vim.opt.ruler = false
 vim.opt.wrap = false -- display lines as one long line
 vim.opt.list = false
-vim.opt.backup = false -- creates a backup fileop
+vim.opt.backup = false -- creates a backup file
