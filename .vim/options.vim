@@ -9,7 +9,7 @@ set relativenumber
 set term=xterm-256color                          " terminal type
 set encoding=utf-8                               " encoding
 set showmatch                                    " show matching brackets
-set noshowmode
+set showmode
 set nobackup noswapfile
 set autoindent expandtab
 set shiftwidth=2 softtabstop=2 tabstop=2
