@@ -56,7 +56,7 @@ return packer.startup(function(use)
 	use({ "williamboman/mason.nvim", commit = "d0072bef1af32bd1211e92f5230e0fb59548b53f" })
 	use({ "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" })
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" })
-	use({ "SmiteshP/nvim-navic" })
+	use({ "SmiteshP/nvim-navic", commit = "132b273773768b36e9ecab2138b82234a9faf5ed" })
 
 	-- completion
 	use({ "hrsh7th/nvim-cmp", commit = "2427d06b6508489547cd30b6e86b1c75df363411" })
@@ -82,6 +82,16 @@ return packer.startup(function(use)
 
 	-- git
 	use({ "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" })
+	use({
+		"zbirenbaum/copilot.lua",
+		event = { "VimEnter" },
+		config = function()
+			vim.defer_fn(function()
+				require("user.copilot")
+			end, 100)
+		end,
+	})
+	use("samodostal/copilot-client.lua")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

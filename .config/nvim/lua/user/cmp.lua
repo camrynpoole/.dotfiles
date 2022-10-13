@@ -21,11 +21,28 @@ cmp.setup({
 	},
 
 	mapping = {
-		["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item()),
-		["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item()),
 		["<C-c>"] = cmp.mapping.abort(),
-    ['<C-Space>'] = cmp.mapping.complete(),
+		["<C-Space>"] = cmp.mapping.complete(),
 		["<CR>"] = cmp.mapping.confirm({ select = false }), -- Set `select` to `false` to only confirm explicitly selected items.
+		["<C-j>"] = cmp.mapping(function(fallback)
+			if luasnip.jumpable(1) then
+				luasnip.jump(1)
+			elseif cmp.visible() then
+				cmp.select_next_item()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+
+		["<C-k>"] = cmp.mapping(function(fallback)
+			if luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			elseif cmp.visible() then
+				cmp.select_prev_item()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
 	},
 
 	formatting = {
@@ -33,8 +50,8 @@ cmp.setup({
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
-				luasnip = "",
 				nvim_lsp = "",
+				luasnip = "",
 				buffer = "",
 				path = "",
 			})[entry.source.name]
