@@ -1,6 +1,5 @@
 local M = {}
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities.offsetEncoding = { "utf-16" }
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if status_cmp_ok then
@@ -28,7 +27,7 @@ local config = {
 	signs = true,
 	update_in_insert = true,
 	virtual_text = false,
-	underline = false,
+	underline = true,
 }
 
 vim.diagnostic.config(config)

@@ -21,7 +21,6 @@ cmp.setup({
 	},
 
 	mapping = {
-		["<C-c>"] = cmp.mapping.abort(),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<CR>"] = cmp.mapping.confirm({ select = false }), -- Set `select` to `false` to only confirm explicitly selected items.
 		["<C-j>"] = cmp.mapping(function(fallback)

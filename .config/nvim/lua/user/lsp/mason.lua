@@ -8,12 +8,18 @@ if not status_ok_1 then
 	return
 end
 
+local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status_ok then
+	return
+end
+
 -- list servers here
 local servers = {
 	"sumneko_lua",
 	"pyright",
 	"clangd",
 	"emmet_ls",
+	"tsserver",
 }
 
 local settings = {
@@ -35,22 +41,15 @@ mason_lspconfig.setup({
 	automatic_installation = true,
 })
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-	return
-end
+local on_attach = require("user.lsp.handlers").on_attach
+local capabilities = require("user.lsp.handlers").capabilities
+local servers_config = require("user.lsp.servers")
 
-local opts = {}
-
-for _, server in pairs(servers) do
-	opts = {
-		on_attach = require("user.lsp.handlers").on_attach,
-		capabilities = require("user.lsp.handlers").capabilities,
-	}
-	if server == "sumneko_lua" then
-		local sumneko_opts = require("user.lsp.settings.sumneko-lua")
-		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-	end
-
-	lspconfig[server].setup(opts)
-end
+mason_lspconfig.setup_handlers({
+	function(server)
+		local config = servers_config[server] or {}
+		config.on_attach = on_attach
+		config.capabilities = capabilities
+		lspconfig[server].setup(config)
+	end,
+})

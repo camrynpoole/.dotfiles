@@ -8,6 +8,7 @@ keymap("n", "0", "^", opts)
 -- convenient maps
 keymap("n", "<leader>a", "A", opts)
 keymap("n", "<leader>i", "I", opts)
+keymap("n", "<TAB>", ":b#<CR>", opts)
 
 -- keep selection after indent
 keymap("v", "<", "<gv", opts)
