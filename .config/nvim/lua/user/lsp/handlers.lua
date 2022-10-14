@@ -9,8 +9,8 @@ end
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local signs = {
-	{ name = "DiagnosticSignError", text = "✗" },
-	{ name = "DiagnosticSignWarn", text = "!" },
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
 	{ name = "DiagnosticSignHint", text = "" },
 	{ name = "DiagnosticSignInfo", text = "" },
 }

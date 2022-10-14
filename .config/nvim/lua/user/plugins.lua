@@ -93,7 +93,7 @@ return packer.startup(function(use)
 			end, 100)
 		end,
 	})
-	use("samodostal/copilot-client.lua")
+	use("zbirenbaum/copilot-cmp")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

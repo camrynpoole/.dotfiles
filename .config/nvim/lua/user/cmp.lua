@@ -10,9 +10,6 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
-local icons = require("user.icons")
-local kind_icons = icons.kind
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -44,21 +41,8 @@ cmp.setup({
 		end, { "i", "s" }),
 	},
 
-	formatting = {
-		fields = { "kind", "abbr", "menu" },
-		format = function(entry, vim_item)
-			vim_item.kind = kind_icons[vim_item.kind]
-			vim_item.menu = ({
-				nvim_lsp = "",
-				luasnip = "",
-				buffer = "",
-				path = "",
-			})[entry.source.name]
-			return vim_item
-		end,
-	},
-
 	sources = {
+		{ name = "copilot" },
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "buffer" },

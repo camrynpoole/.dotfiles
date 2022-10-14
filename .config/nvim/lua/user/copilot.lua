@@ -3,27 +3,17 @@ if not status_ok then
 	return
 end
 
-local status_c_ok, copilot_client = pcall(require, "copilot-client")
+local status_c_ok, copilot_cmp = pcall(require, "copilot_cmp")
 if not status_c_ok then
 	return
 end
 
 copilot.setup({
 	cmp = {
-		enabled = false, -- no need for cmp
+		enabled = true,
 	},
 })
 
-copilot_client.setup({
-	mapping = {
-		accept = "<CR>",
-	},
+copilot_cmp.setup({
+	method = "getCompletionsCycling",
 })
-
--- Create a keymap that triggers the suggestion. To accept suggestion press <CR> as set in the setup.
-vim.api.nvim_set_keymap(
-	"i",
-	"<C-c>",
-	'<cmd>lua require("copilot-client").suggest()<CR>',
-	{ noremap = true, silent = true }
-)
