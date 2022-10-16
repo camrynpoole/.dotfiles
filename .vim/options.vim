@@ -19,7 +19,7 @@ set backspace=eol,start,indent                   " configure backspace to act as
 set wildmenu
 set laststatus=2
 set shortmess+=c
-set shortmess=I
+"set shortmess=I
 set formatoptions-=cro
 set whichwrap+=<,>,h,l
 
