@@ -52,9 +52,13 @@ local diagnostics = {
 	always_visible = true,
 }
 
+-- first char uppercase
 local filetype = {
 	"filetype",
-	icons_enabled = true,
+	fmt = function(str)
+		return (str:gsub("^%l", string.upper))
+	end,
+	icons_enabled = false,
 	colored = false,
 }
 
