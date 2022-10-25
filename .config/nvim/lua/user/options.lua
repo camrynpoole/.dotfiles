@@ -33,7 +33,7 @@ vim.opt.termguicolors = true -- set term gui colors (most terminals support this
 vim.opt.undofile = true -- enable persistent undo
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.number = true -- set numbered lines
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore, shid i do
 vim.opt.swapfile = false -- creates a swapfile
