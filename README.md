@@ -92,4 +92,4 @@ then in .zshrc put `source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 - warp
 
-ln -s ~/.dotfiles/.warp ~/.warp
+`ln -s ~/.dotfiles/.warp ~/.warp`
