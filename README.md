@@ -89,3 +89,7 @@ then in .zshrc put `source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 - hammerspoon
 
 `ln -s ~/.dotfiles/.hammerspoon ~/.hammerspoon`
+
+- warp
+
+ln -s ~/.dotfiles/.warp ~/.warp

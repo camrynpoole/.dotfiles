@@ -7,7 +7,7 @@ end
 local theme = function()
 	local colors = {
 		white = "#FFFFFF",
-		blue = "#3478C6",
+		blue = "#007acc",
 	}
 	return {
 		inactive = {
