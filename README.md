@@ -86,6 +86,8 @@ then in .zshrc put `source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 `ln -s ~/.dotfiles/.gitmessage ~/.gitmessage`
 
+`ln -s ~/.dotfiles/.gitignore ~/.gitignore`
+
 - hammerspoon
 
 `ln -s ~/.dotfiles/.hammerspoon ~/.hammerspoon`
