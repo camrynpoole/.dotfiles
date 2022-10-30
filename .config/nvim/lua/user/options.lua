@@ -21,7 +21,7 @@ vim.opt.scrolloff = 12 -- is one of my fav
 vim.opt.sidescrolloff = 12
 vim.wo.conceallevel = 2 -- concealing markdown
 
-vim.opt.hlsearch = true -- highlight all matches on previous search pattern
+vim.opt.hlsearch = false -- highlight all matches on previous search pattern
 vim.opt.incsearch = true -- show matches while typing
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.smartcase = true -- smart case
