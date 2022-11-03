@@ -75,14 +75,7 @@ return packer.startup(function(use)
 
 	-- navigation
 	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
-	use({
-		"ggandor/leap.nvim",
-		keys = { "s", "S" },
-		config = function()
-			local leap = require("leap")
-			leap.set_default_keymaps()
-		end,
-	})
+
 	-- syntax
 	use({ "nvim-treesitter/nvim-treesitter", commit = "aebc6cf6bd4675ac86629f516d612ad5288f7868" })
 
