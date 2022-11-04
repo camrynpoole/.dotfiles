@@ -3,7 +3,7 @@
 ### ZSH HOME
 export ZSH=$HOME/.zsh
 
-# emacs keybinds aka the defaults
+# bindkey -v for vim mode
 bindkey -e
 
 # options
