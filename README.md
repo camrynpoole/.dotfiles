@@ -52,6 +52,12 @@ then in .zshrc put `fpath=(~/.zsh/zsh-completion/zsh-completion.plugin.zsh/src $
 
 then in .zshrc put `source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh`
 
+## Alacritty
+
+disable font smoothing
+
+`defaults -currentHost write -g AppleFontSmoothing -int 0`
+
 ## Symlinks
 
 - vimrc

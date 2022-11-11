@@ -3,6 +3,9 @@
 ### ZSH HOME
 export ZSH=$HOME/.zsh
 
+## show last command name and working directory
+preexec() { print -Pn "\e]0;$1%~\a" }
+
 # bindkey -v for vim mode
 bindkey -e
 
