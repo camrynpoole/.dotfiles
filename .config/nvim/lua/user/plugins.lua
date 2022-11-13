@@ -72,6 +72,7 @@ return packer.startup(function(use)
 	-- ui
 	use({ "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" })
 	use({ "nvim-lualine/lualine.nvim", commit = "a52f078026b27694d2290e34efa61a6e4a690621" })
+	use({ "Mofiqul/vscode.nvim", commit = "920145bc2c431f8086549957aeb085d8e4c10ab2" })
 
 	-- navigation
 	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
