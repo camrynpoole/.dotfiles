@@ -5,7 +5,7 @@ window:
   padding:
     x: 0
     y: 0
-  decorations: buttonless 
+  decorations: full 
   dimensions:
     columns: 90
     lines: 30
