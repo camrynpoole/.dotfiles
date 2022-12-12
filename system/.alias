@@ -1,8 +1,12 @@
-
-# terminal aliases------------------------------
+# terminal 
 alias c='clear'
 alias la='exa -lah'
 alias ls='exa --color=auto'
 
-# zsh aliases------------------------------
+# zsh 
 alias reload="source $HOME/.zshrc"
+
+# safe rm, cp, and mv 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
