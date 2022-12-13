@@ -1,37 +1,36 @@
 #!/usr/bin/env zsh
 
-### ZSH HOME
+# zsh home
 export ZSH=$HOME/.zsh
 
-## show last command name and working directory
-preexec() { print -Pn "\e]0;$1%~\a" }
-
-# bindkey -v for vim mode
 bindkey -e
 
-# options
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# source zap 
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+
+# zap plugin manager
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-completions"
+
+# zap source
+plug "$HOME/.dotfiles/system/aliases.zsh"
+plug "$HOME/.dotfiles/system/prompt.zsh"
 
 # zsh completions setting/keybinds
 autoload -Uz compinit && compinit
-fpath=(~/.zsh/zsh-completions/zsh-completions.plugin.zsh/src $fpath)
+fpath=(~/.local/share/zap/plugins/zsh-completions/zsh-completions.plugin.zsh/src $fpath)
 
-# zsh autosuggestions setting/keybinds
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# case insensitive completions
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# zsh syntax highlighting setting/keybinds
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# show last command name and working directory
+preexec() { print -Pn "\e]0;$1%~\a" }
 
 # paths
 export PATH=/opt/homebrew/bin:$PATH
 
-# for system folder to be exported
-export EDITOR='nvim'
-for DOTFILE in `find /Users/camrynpoole/.dotfiles/system`
-do
-  [ -f $DOTFILE ] && source $DOTFILE
-done
-
+# load nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 

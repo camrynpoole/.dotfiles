@@ -97,7 +97,3 @@ disable font smoothing
 - hammerspoon
 
 `ln -s ~/.dotfiles/.hammerspoon ~/.hammerspoon`
-
-- warp
-
-`ln -s ~/.dotfiles/.warp ~/.warp`
