@@ -16,6 +16,7 @@ plug "zsh-users/zsh-completions"
 # zap source
 plug "$HOME/.dotfiles/system/aliases.zsh"
 plug "$HOME/.dotfiles/system/prompt.zsh"
+plug "$HOME/.dotfiles/system/ctrl-z.zsh"
 
 # zsh completions setting/keybinds
 autoload -Uz compinit && compinit
