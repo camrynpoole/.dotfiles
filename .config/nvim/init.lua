@@ -1,3 +1,9 @@
+if vim.g.vscode then
+-- VSCode extension
+else
+	-- ordinary Neovim
+end
+
 require("camryn.plugins")
 require("camryn.colorscheme")
 require("camryn.settings")
