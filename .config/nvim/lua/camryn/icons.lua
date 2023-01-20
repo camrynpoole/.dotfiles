@@ -1,3 +1,6 @@
+-----------------------------------------------------------
+-- Icons
+-----------------------------------------------------------
 vim.g.use_nerd_icons = false
 if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 	return {

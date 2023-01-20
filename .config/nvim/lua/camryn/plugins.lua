@@ -1,3 +1,6 @@
+----------------------------------------------------------
+-- Plugins
+-----------------------------------------------------------
 -- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -23,6 +26,7 @@ lazy.setup({
 	"numToStr/Comment.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	"chaoren/vim-wordmotion",
+	"tpope/vim-unimpaired",
 
 	-- ui
 	"kyazdani42/nvim-web-devicons",
